@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">
+    <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+        <h2>Editar contacto</h2><br>
+        <div class="form-group">
+            <label for="exampleforname" >Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre completo" formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="exampleforname" >Telefono</label>
+            <input type="text" class="form-control" placeholder="Telefono a 10 digitos" formControlName="telefono">
+        </div>
+        <div class="form-group">
+            <label for="exampleforname" >Edad</label>
+            <input type="text" class="form-control" placeholder="Edad" formControlName="edad">
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-dark" (click)="regresar()">Cancelar</button>
+
+    </form>
+</div>
+
+<app-footer></app-footer>

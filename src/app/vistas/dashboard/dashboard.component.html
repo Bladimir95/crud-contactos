@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+
+
+<div class="container">
+    <h2>Lista de contactos</h2><br>
+
+    <div class="search-bar">
+      <input type="text" class="search" placeholder="Buscar por nombre">
+    </div><br>
+
+    <button type="button" class="btn btn-primary" (click)="crearContacto()">Nuevo paciente</button><br><br>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contacto of contactos">
+            <th scope="row">{{ contacto.id }}</th>
+            <td>{{ contacto.nombre }}</td>
+            <td>{{ contacto.telefono }}</td>
+            <td>{{ contacto.edad }}</td>
+            <td><button type="button" class="btn btn-primary" (click)="editarContacto(contacto.id)">Editar</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="eliminarContacto(contacto.id)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
+
+<app-footer></app-footer>
